@@ -1,4 +1,5 @@
 const $ = (id) => document.getElementById(id);
+const profileName = $("profileName");
 const concerns = $("concerns");
 const sensitivity = $("sensitivity");
 const goals = $("goals");
@@ -8,6 +9,7 @@ const saveBtn = $("save");
 async function load() {
   const { profile } = await chrome.storage.sync.get("profile");
   if (profile) {
+    profileName.value = profile.name || "";
     concerns.value = (profile.concerns || []).join(", ");
     sensitivity.value = profile.sensitivity || "";
     goals.value = (profile.goals || []).join(", ");
@@ -16,6 +18,7 @@ async function load() {
 
 saveBtn.addEventListener("click", async () => {
   const profile = {
+    name: profileName.value.trim(), 
     concerns: concerns.value.split(",").map(s => s.trim()).filter(Boolean),
     sensitivity: sensitivity.value || "",
     goals: goals.value.split(",").map(s => s.trim()).filter(Boolean)

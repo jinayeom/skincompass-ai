@@ -10,11 +10,13 @@ openOptionsEl.addEventListener("click", async (e) => {
 
 async function loadProfile() {
   const { profile } = await chrome.storage.sync.get("profile");
-  if (!profile) {
+  if (profile) {
+    let display = profile.name ? 'ProfileL ${profile.name}/n/n' : "";
+    display += JSON.stringify(profile, null, 2);
+    profileEl.textContent = display;
+  } else {
     profileEl.textContent = "No profile yet. Open Options to create one.";
-    return;
   }
-  profileEl.textContent = JSON.stringify(profile, null, 2);
 }
 
 async function pingBackground() {
