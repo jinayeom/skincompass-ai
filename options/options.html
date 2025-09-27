@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>SkinCompass AI - Options</title>
+    <style>
+      body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+      label { display: block; margin: 12px 0 4px; }
+      input, select, textarea { width: 320px; padding: 8px; }
+      button { margin-top: 16px; padding: 8px 12px; }
+      .hint { color: #666; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>Skin profile</h1>
+    <p class="hint">Educational helper only. Not medical advice.</p>
+
+    <label>Concerns (comma separated)</label>
+    <input id="concerns" placeholder="acne, hyperpigmentation" />
+
+    <label>Sensitivity</label>
+    <select id="sensitivity">
+      <option value="">Select</option>
+      <option>low</option>
+      <option>med</option>
+      <option>high</option>
+    </select>
+
+    <label>Goals (comma separated)</label>
+    <input id="goals" placeholder="prevent breakouts, fade dark spots" />
+
+    <button id="save">Save profile</button>
+    <p id="msg"></p>
+
+    <script src="./options.js"></script>
+  </body>
+</html>
+
