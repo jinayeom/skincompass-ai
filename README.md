@@ -1,4 +1,5 @@
 # Introducing SkinCompass AI 
+## About SkinCompass AI
 SkinCompass AI is a wayfinding assistant that asks targeted questions to fully understand each user's skincare needs, then uses this insight to deliver personalized product recommendations as they shop. Loaded onto a Google Chrome extension, users can shop and make educated decisions when purchasing skincare products with confidence. 
 
 ## Concerns SkinCompass AI Addresses 
