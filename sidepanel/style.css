@@ -1,106 +1,165 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =========================
+   Pale Blue Theme Variables
+   ========================= */
+:root {
+  /* Core palette */
+  --bg: #f6f9ff;                /* page background */
+  --surface: rgba(255, 255, 255, 0.95);
+  --glass-blur: 20px;
+
+  /* Text */
+  --text: #274160;              /* main body text (deep desat blue) */
+  --text-muted: #6b7a90;        /* muted text */
+  --heading: #0D47A1;           /* deep blue for headings */
+
+  /* Brand blues */
+  --primary-50: #e9f2ff;
+  --primary-100: #dbe9ff;
+  --primary-300: #a9c7ff;
+  --primary-400: #7fb0ff;
+  --primary-500: #4d91ff;
+  --primary-600: #1976D2;       /* existing brand blue */
+  --primary-700: #1565C0;
+  --primary-800: #0f4ea3;
+
+  /* Accents and lines */
+  --line: rgba(21, 101, 192, 0.18);
+  --shadow: rgba(25, 118, 210, 0.12);
+  --shadow-strong: rgba(25, 118, 210, 0.18);
+
+  /* Success/status (soft blue instead of green) */
+  --status-bg: linear-gradient(135deg, rgba(179, 205, 255, 0.25) 0%, rgba(159, 197, 248, 0.2) 100%);
+  --status-border: rgba(120, 162, 235, 0.45);
+  --status-dot-a: #7aa7ff;
+  --status-dot-b: #5f95ff;
+  --status-text: #0f4ea3;
+
+  /* Card top bar gradient */
+  --card-bar: linear-gradient(90deg, var(--primary-300) 0%, var(--primary-600) 50%, var(--primary-300) 100%);
+
+  /* Profile info block */
+  --profile-bg: linear-gradient(135deg, rgba(233, 242, 255, 0.6) 0%, rgba(233, 242, 255, 0.4) 100%);
+  --profile-line: rgba(21, 101, 192, 0.15);
+
+  /* Button */
+  --btn-grad: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-700) 100%);
+  --btn-grad-hover: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-800) 100%);
+  --btn-shine: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  --btn-shadow: rgba(25, 118, 210, 0.28);
+  --btn-shadow-hover: rgba(25, 118, 210, 0.36);
+
+  /* Empty state */
+  --empty-bg: linear-gradient(135deg, rgba(233, 242, 255, 0.35) 0%, rgba(233, 242, 255, 0.2) 100%);
+  --empty-border: rgba(21, 101, 192, 0.25);
+
+  /* Borders */
+  --border: rgba(21, 101, 192, 0.16);
+  --border-strong: rgba(21, 101, 192, 0.28);
 }
+
+/* Base reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(135deg, #FFF8E1 0%, #FFFBF0 50%, #FFF3E0 100%);
-  color: #5D4037;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
   width: 100%;
 }
 
+/* Header */
 .header { 
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
+  background: var(--surface);
+  backdrop-filter: blur(var(--glass-blur));
   padding: 24px 20px; 
-  border-bottom: 1px solid rgba(139, 111, 78, 0.1);
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 20px rgba(139, 111, 78, 0.05);
+  box-shadow: 0 2px 20px var(--shadow);
 }
 
 .header h1 {
   font-size: 26px;
   font-weight: 700;
-  color: #8B6F4E;
+  color: var(--primary-700);
   text-align: center;
   letter-spacing: -0.5px;
 }
 
+/* Layout */
 .container { 
   padding: 24px 20px; 
   max-width: 420px;
   margin: 0 auto;
 }
 
+/* Status */
 #status {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 20px;
-  background: linear-gradient(135deg, rgba(129, 199, 132, 0.15) 0%, rgba(102, 187, 106, 0.1) 100%);
-  border: 1px solid rgba(129, 199, 132, 0.3);
+  background: var(--status-bg);
+  border: 1px solid var(--status-border);
   border-radius: 20px;
   margin-bottom: 24px;
   font-size: 15px;
   font-weight: 600;
-  color: #2E7D32;
+  color: var(--status-text);
   position: relative;
-  box-shadow: 0 4px 16px rgba(129, 199, 132, 0.1);
+  box-shadow: 0 4px 16px var(--shadow);
 }
 
 #status::before {
   content: '';
   width: 10px;
   height: 10px;
-  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  background: linear-gradient(135deg, var(--status-dot-a) 0%, var(--status-dot-b) 100%);
   border-radius: 50%;
   margin-right: 10px;
   animation: pulse 2s infinite;
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 0 8px rgba(125, 155, 255, 0.45);
 }
 
+/* Cards */
 .card { 
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--surface);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(139, 111, 78, 0.15); 
+  border: 1px solid var(--border); 
   border-radius: 24px; 
   padding: 24px; 
   margin: 24px 0;
-  box-shadow: 0 8px 32px rgba(139, 111, 78, 0.12);
+  box-shadow: 0 8px 32px var(--shadow);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  animation: slideInUp 0.4s ease-out;
 }
 
 .card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #FFB74D 0%, #FF8F00 50%, #FFB74D 100%);
+  background: var(--card-bar);
   border-radius: 24px 24px 0 0;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 48px rgba(139, 111, 78, 0.18);
-  border-color: rgba(255, 183, 77, 0.3);
+  box-shadow: 0 12px 48px var(--shadow-strong);
+  border-color: var(--border-strong);
 }
 
 .card h2 {
   font-size: 20px;
   font-weight: 700;
-  color: #6D4C41;
+  color: var(--heading);
   margin-bottom: 20px;
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(139, 111, 78, 0.15);
+  border-bottom: 1px solid var(--line);
   position: relative;
 }
 
@@ -111,27 +170,28 @@ body {
   left: 0;
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, #FFB74D 0%, #FF8F00 100%);
+  background: linear-gradient(90deg, var(--primary-300) 0%, var(--primary-600) 100%);
   border-radius: 2px;
 }
 
 .card p {
-  color: #8D6E63;
+  color: var(--text-muted);
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
+/* Profile block */
 #profile {
   min-height: 60px;
   margin-bottom: 20px;
 }
 
 .profile-info {
-  background: linear-gradient(135deg, rgba(255, 248, 225, 0.6) 0%, rgba(255, 251, 240, 0.4) 100%);
+  background: var(--profile-bg);
   border-radius: 16px;
   padding: 20px;
-  border: 1px solid rgba(139, 111, 78, 0.15);
+  border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
 }
@@ -139,45 +199,45 @@ body {
 .profile-info::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #FFB74D 0%, #FF8F00 100%);
+  background: linear-gradient(90deg, var(--primary-300) 0%, var(--primary-600) 100%);
 }
 
 .profile-name {
   font-size: 18px;
-  color: #6D4C41;
+  color: var(--heading);
   margin-bottom: 16px;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(139, 111, 78, 0.15);
+  border-bottom: 1px solid var(--line);
   font-weight: 600;
 }
 
 .profile-item {
   margin-bottom: 12px;
   font-size: 15px;
-  color: #5D4037;
+  color: var(--text);
   line-height: 1.5;
   padding: 8px 0;
 }
 
 .profile-item .label {
   font-weight: 600;
-  color: #8B6F4E;
+  color: var(--primary-700);
   margin-right: 8px;
 }
 
+/* Empty state */
 .empty-profile {
-  color: #A1887F;
+  color: var(--text-muted);
   font-style: italic;
   font-size: 15px;
   text-align: center;
   padding: 32px 20px;
-  background: linear-gradient(135deg, rgba(255, 248, 225, 0.4) 0%, rgba(255, 251, 240, 0.2) 100%);
+  background: --empty-bg; /* fallback if var missing */
+  background: var(--empty-bg);
   border-radius: 16px;
-  border: 2px dashed rgba(139, 111, 78, 0.25);
+  border: 2px dashed var(--empty-border);
   position: relative;
 }
 
@@ -187,25 +247,27 @@ body {
   top: 12px;
   right: 12px;
   font-size: 18px;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
+/* Footer */
 .footer { 
   margin-top: 40px; 
   padding-top: 24px;
-  border-top: 1px solid rgba(139, 111, 78, 0.15);
+  border-top: 1px solid var(--line);
   text-align: center;
-  color: #A1887F;
+  color: var(--text-muted);
   font-size: 13px;
-  background: rgba(255, 248, 225, 0.3);
+  background: rgba(233, 242, 255, 0.35);
   border-radius: 16px;
   padding: 16px;
 }
 
+/* CTA links -> buttons */
 a { 
   display: inline-block;
   padding: 14px 24px;
-  background: linear-gradient(135deg, #FFB74D 0%, #FF8F00 100%);
+  background: var(--btn-grad);
   border: none;
   border-radius: 16px;
   color: white;
@@ -214,7 +276,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 143, 0, 0.3);
+  box-shadow: 0 4px 16px var(--btn-shadow);
   font-family: inherit;
   text-align: center;
   min-width: 140px;
@@ -229,72 +291,50 @@ a::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: var(--btn-shine);
   transition: left 0.5s;
 }
 
-a:hover::before {
-  left: 100%;
-}
+a:hover::before { left: 100%; }
 
 a:hover { 
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 143, 0, 0.4);
-  background: linear-gradient(135deg, #FFC107 0%, #FF6F00 100%);
+  box-shadow: 0 8px 24px var(--btn-shadow-hover);
+  background: var(--btn-grad-hover);
 }
 
 a:active {
   transform: translateY(0);
-  box-shadow: 0 2px 12px rgba(255, 143, 0, 0.3);
+  box-shadow: 0 2px 12px var(--btn-shadow);
 }
 
-/* Enhanced Animation */
+/* Animations */
 @keyframes pulse {
   0% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 0 8px rgba(125, 155, 255, 0.45);
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.85;
     transform: scale(1.1);
-    box-shadow: 0 0 16px rgba(76, 175, 80, 0.6);
+    box-shadow: 0 0 16px rgba(125, 155, 255, 0.6);
   }
   100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 0 8px rgba(125, 155, 255, 0.45);
   }
-}
-
-/* Subtle entrance animation */
-.card {
-  animation: slideInUp 0.4s ease-out;
 }
 
 @keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 480px) {
-  .container {
-    padding: 20px 16px;
-  }
-  
-  .header {
-    padding: 20px 16px;
-  }
-  
-  .card {
-    padding: 20px;
-    margin: 20px 0;
-  }
+  .container { padding: 20px 16px; }
+  .header { padding: 20px 16px; }
+  .card { padding: 20px; margin: 20px 0; }
 }
