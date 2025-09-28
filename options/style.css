@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 
-body { 
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
   min-height: 100vh;
   padding: 24px;
-  color: #5D4037;
+  color: #5d4037;
 }
 
 .container {
@@ -81,56 +81,59 @@ body {
   color: #9aa3b2;
 }
 
-
 h1 {
   font-size: 28px;
   font-weight: 700;
-  color: #1565C0;
+  color: #1565c0;
   margin-bottom: 8px;
   text-align: center;
 }
 
 .hint {
   text-align: center;
-  color: #0D47A1;
+  color: #0d47a1;
   font-size: 14px;
   margin-bottom: 32px;
   padding: 12px 20px;
-  background: #E3F2FD;
+  background: #e3f2fd;
   border-radius: 16px;
   border: 1px solid rgba(139, 111, 78, 0.1);
 }
 
-label { 
-  display: block; 
-  margin: 24px 0 8px; 
+label {
+  display: block;
+  margin: 24px 0 8px;
   font-weight: 600;
-  color: #0D47A1;
+  color: #0d47a1;
   font-size: 15px;
 }
 
-input, select, textarea { 
+input,
+select,
+textarea {
   width: 100%;
   padding: 16px 20px;
   border: 2px solid rgba(139, 111, 78, 0.1);
   border-radius: 16px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.8);
-  color: #5D4037;
+  color: #5d4037;
   transition: all 0.3s ease;
   font-family: inherit;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
-  border-color: #64B5F6;
+  border-color: #64b5f6;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 0 4px rgba(255, 183, 77, 0.1);
   transform: translateY(-1px);
 }
 
 input::placeholder {
-  color: #A1887F;
+  color: #a1887f;
 }
 
 select {
@@ -143,11 +146,11 @@ select {
   padding-right: 48px;
 }
 
-button { 
+button {
   width: 100%;
-  margin-top: 24px; 
+  margin-top: 24px;
   padding: 16px 24px;
-  background: linear-gradient(135deg, #64B5F6 0%, #1976D2 100%);
+  background: linear-gradient(135deg, #64b5f6 0%, #1976d2 100%);
   border: none;
   border-radius: 16px;
   color: white;
@@ -162,7 +165,7 @@ button {
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(255, 143, 0, 0.4);
-  background: linear-gradient(135deg, #FFC107 0%, #FF6F00 100%);
+  background: linear-gradient(135deg, #ffc107 0%, #ff6f00 100%);
 }
 
 button:active {
@@ -182,12 +185,12 @@ button:active {
 
 .success {
   background: rgba(129, 199, 132, 0.1);
-  color: #2E7D32;
+  color: #2e7d32;
   border: 1px solid rgba(129, 199, 132, 0.3);
 }
 
 .error {
   background: rgba(239, 154, 154, 0.1);
-  color: #C62828;
+  color: #c62828;
   border: 1px solid rgba(239, 154, 154, 0.3);
 }

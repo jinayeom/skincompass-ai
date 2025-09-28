@@ -1,14 +1,14 @@
-const statusEl = document.getElementById("status");
-const profileEl = document.getElementById("profile");
-const openOptionsEl = document.getElementById("openOptions");
+const statusEl = document.getElementById('status');
+const profileEl = document.getElementById('profile');
+const openOptionsEl = document.getElementById('openOptions');
 
-openOptionsEl.addEventListener("click", async (e) => {
+openOptionsEl.addEventListener('click', async (e) => {
   e.preventDefault();
   chrome.runtime.openOptionsPage();
 });
 
 async function loadProfile() {
-  const { profile } = await chrome.storage.sync.get("profile");
+  const { profile } = await chrome.storage.sync.get('profile');
   if (profile) {
     profileEl.innerHTML = `
       <div class="profile-info">
@@ -19,18 +19,19 @@ async function loadProfile() {
       </div>
     `;
   } else {
-    profileEl.innerHTML = '<div class="empty-profile"> No profile yet. Open Options to create one.</div>';
+    profileEl.innerHTML =
+      '<div class="empty-profile"> No profile yet. Open Options to create one.</div>';
   }
 }
 
 async function pingBackground() {
   return new Promise((resolve) => {
-    chrome.runtime.sendMessage({ type: "PING" }, (res) => {
+    chrome.runtime.sendMessage({ type: 'PING' }, (res) => {
       if (chrome.runtime.lastError) {
-        statusEl.textContent = "Background not responding";
+        statusEl.textContent = 'Background not responding';
         resolve();
       } else {
-        statusEl.textContent = "Extension ready";
+        statusEl.textContent = 'Extension ready';
         resolve(res);
       }
     });
